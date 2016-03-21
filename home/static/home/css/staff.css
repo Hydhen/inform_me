@@ -1,0 +1,36 @@
+.profile-img {
+	width: 125px;
+	height: 125px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.profile-divider {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.md-headline.status {
+    font-size: 14px;
+    font-style: italic;
+}
+
+.md-headline.status.on {
+    color: green;
+}
+
+.md-headline.status.off {
+    color: grey;
+}
+
+.md-card.status.on {
+    background-color: rgba(175, 230, 175, 0.75);
+}
+
+.md-card.status.off {
+    background-color: lightgrey;
+}
