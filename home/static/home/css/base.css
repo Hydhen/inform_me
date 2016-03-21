@@ -17,6 +17,12 @@
     margin-left: 10px;
 }
 
+.md-button.brand-icon {
+    min-width: 0px;
+    font-size: 32px;
+    color: grey;
+}
+
 /*
  *  DEBUG COLOR
  */
