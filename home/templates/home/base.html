@@ -1,10 +1,102 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <title>Inform me</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="{% static 'home/css/base.css' %}">
+        <link rel="stylesheet" href="{% static 'home/css/angular-material.min.css' %}">
     </head>
-    <body>
-        Welcome in base
+
+    <body ng-app="InformMe" ng-controller="MenuCtrl">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleMenu();">
+                    <md-icon>menu</md-icon>
+                </md-button>
+                <span flex></span>
+                <h2>
+                    <span>Informations</span>
+                </h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-sidenav md-component-id="menu">
+            <md-content>
+                <md-list flex>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">home</md-icon>
+                            <span class="menu-label">Accueil</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">help</md-icon>
+                            <span class="menu-label">Qu'est-ce que le HUB ?</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">gavel</md-icon>
+                            <span class="menu-label">Les règles</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">create_new_folder</md-icon>
+                            <span class="menu-label">Présenter un projet</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">reorder</md-icon>
+                            <span class="menu-label">Parcourir les projets</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">assignment</md-icon>
+                            <span class="menu-label">Activités</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">event</md-icon>
+                            <span class="menu-label">Planning</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">face</md-icon>
+                            <span class="menu-label">Le staff</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">email</md-icon>
+                            <span class="menu-label">Nous contacter</span>
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+        <div>
+            <md-content>
+                Contenu
+            </md-content>
+        </div>
     </body>
+
+    <footer>
+        <script type="text/javascript" src="{% static 'home/js/angular.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'home/js/angular-animate.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'home/js/angular-aria.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'home/js/angular-messages.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'home/js/angular-material.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'home/js/base.js' %}"></script>
+    </footer>
 </html>

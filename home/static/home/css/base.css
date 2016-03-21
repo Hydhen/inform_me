@@ -1,0 +1,33 @@
+* {
+    font-family: 'Cabin', sans-serif;
+}
+
+.material-icons.menu-icon {
+    margin-bottom: 5px;
+}
+
+.md-button.menu-button {
+    font-size: 24px;
+    text-align: left;
+    text-transform: none;
+}
+
+.menu-label {
+    font-size: 18px;
+    margin-left: 10px;
+}
+
+/*
+ *  DEBUG COLOR
+ */
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: lightblue;
+}
+
+.green {
+    background-color: lightgreen;
+}
