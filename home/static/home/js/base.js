@@ -4,7 +4,7 @@ app.config(function($interpolateProvider, $mdThemingProvider) {
     $interpolateProvider.startSymbol('{[{').endSymbol('}]}');
     $mdThemingProvider.theme('default')
         .primaryPalette('blue')
-        .accentPalette('grey');
+        .accentPalette('green');
 })
 
 app.controller('MenuCtrl', function($scope, $mdSidenav) {
