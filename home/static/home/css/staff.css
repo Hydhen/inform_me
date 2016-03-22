@@ -1,3 +1,7 @@
+.staff-card {
+	
+}
+
 .profile-img {
 	width: 125px;
 	height: 125px;
@@ -19,18 +23,18 @@
     font-style: italic;
 }
 
-.md-headline.status.on {
+.md-headline.status.true {
     color: green;
 }
 
-.md-headline.status.off {
+.md-headline.status.false {
     color: grey;
 }
 
-.md-card.status.on {
+.md-card.status.true {
     background-color: rgba(175, 230, 175, 0.75);
 }
 
-.md-card.status.off {
+.md-card.status.false {
     background-color: lightgrey;
 }
