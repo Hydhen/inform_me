@@ -2,24 +2,28 @@
 {% load staticfiles %}
 
 {% block content %}
-<div ng-controller="RulesCtrl" ng-cloak>
-    <md-card flex ng-repeat="rule in json">
-        <md-card-title>
-            <md-card-title-text>
-                <span class="md-headline">{[{ rule["title"] }]}</span>
+<div ng-controller="RulesCtrl" ng-cloak layout="row">
+    <div flex-gt-md></div>
+    <div layout="column" flex>
+        <md-card ng-repeat="rule in json" flex>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{[{ rule["title"] }]}</span>
+                    <md-divider flex></md-divier>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p ng-repeat="content in rule['content']">
+                    {[{ content }]}
+                </p>
                 <md-divider flex></md-divier>
-            </md-card-title-text>
-        </md-card-title>
-        <md-card-content>
-            <p ng-repeat="content in rule['content']">
-                {[{ content }]}
-            </p>
-            <md-divider flex></md-divier>
-            <p ng-repeat="content in rule['footer']">
-                {[{ content }]}
-            </p>
-        </md-card-content>
-    </md-card>
+                <p ng-repeat="content in rule['footer']">
+                    {[{ content }]}
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex-gt-md></div>
 </div>
 {% endblock %}
 

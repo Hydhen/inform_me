@@ -4,7 +4,7 @@ import glob, json
 
 def rules(request):
     rules_root = '/data/development/inform_me/text/rules/'
-    rules_list = glob.glob(rules_root + '*.json')
+    rules_list = sorted(glob.glob(rules_root + '*.json'), key=str.lower)
 
     data = '['
 
