@@ -1,3 +1,4 @@
 from index import index
-from staff import staff
+from about import about
 from rules import rules
+from staff import staff

@@ -1,0 +1,36 @@
+{% extends 'home/base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<div ng-controller="AboutCtrl" ng-cloak layout="row">
+    <div flex-gt-md></div>
+    <div layout="column" flex>
+        <md-card ng-repeat="text in json" flex>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{[{ text["title"] }]}</span>
+                    <md-divider flex></md-divier>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p ng-repeat="content in text['content']">
+                    {[{ content }]}
+                </p>
+                <md-divider flex></md-divier>
+                <p ng-repeat="content in text['footer']">
+                    {[{ content }]}
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex-gt-md></div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript">
+    var djangoVar = {};
+    djangoVar.about = {{ json|safe }};
+</script>
+<script type="text/javascript" src="{% static 'home/js/about.js' %}"></script>
+{% endblock %}
