@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Domain, Role, Staff
+
+admin.site.register(Domain)
+admin.site.register(Role)
+admin.site.register(Staff)

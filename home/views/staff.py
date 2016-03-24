@@ -6,30 +6,24 @@
 #    print("%s is aged at %d" % (record['Name'], record['Age']))
 
 from django.shortcuts import render
+from django.core import serializers
+from django.contrib.staticfiles.templatetags.staticfiles import static
 import json
 
-def staff(request):
-    user1 = dict()
-    user1['FirstName'] = 'Loic'
-    user1['LastName'] = 'Juillet'
-    user1['Position'] = 'Manager'
-    user1['Domain'] = 'Embedded'
-    user1['Status'] = 'false'
-    user1['Image'] = '/static/home/img/profile/RedPanda.jpg'
-    user2 = dict()
-    user2['FirstName'] = 'John'
-    user2['LastName'] = 'Doe'
-    user2['Position'] = 'Manager'
-    user2['Domain'] = 'Virtuality'
-    user2['Status'] = 'true'
-    user2['Image'] = '/static/home/img/profile/Axolotl.jpg'
-    users = list()
-    users.append(user1)
-    users.append(user2)
-    users.append(user2)
-    users.append(user1)
-    users.append(user1)
-    users.append(user2)
-    users.append(user2)
+from ..models import Domain, Role, Staff
 
-    return render(request, 'home/staff.html', {'user1': user1, 'users': users})
+def staff(request):
+    queryset = Staff.objects.order_by('-role')
+    list = []
+    for row in queryset:
+        list.append({
+            'image': static('home/img/profile/' + row.login + ".jpg"),
+            'first_name':row.first_name,
+            'last_name': row.last_name,
+            'status': 'false',
+            'domain': row.domain.name,
+            'role': row.role.name,
+        })
+        staffs = json.dumps(list)
+
+    return render(request, 'home/staff.html', {'staffs': staffs})
