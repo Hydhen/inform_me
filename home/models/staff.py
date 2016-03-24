@@ -38,8 +38,3 @@ class Staff(models.Model):
     def __unicode__(self):
         return u"{fname} {lname}".format(fname=self.first_name,
                                          lname=self.last_name)
-
-    def natural_key(self):
-        return (self.domain,) + self.domain.natural_key()
-
-#    natural_key.dependencies = ['home.Domain']
