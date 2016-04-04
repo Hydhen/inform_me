@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Inform me</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/base.css">
+        <link rel="stylesheet" href="css/angular-material.min.css">
+    </head>
+
+    <body ng-app="InformMe" ng-controller="MenuCtrl" ng-cloak>
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <md-button class="md-icon-button" aria-label="Settings" ng-click="toggleMenu();">
+                    <md-icon>menu</md-icon>
+                </md-button>
+                <span flex></span>
+                <h2>
+                    <span>Informations</span>
+                </h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-sidenav md-component-id="menu">
+            <md-content>
+                <md-list flex>
+                    <md-list-item>
+                        <md-button href="#/" flex class="menu-button">
+                            <md-icon class="menu-icon">home</md-icon>
+                            <span class="menu-label">Accueil</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button href="#/about" flex class="menu-button">
+                            <md-icon class="menu-icon">help</md-icon>
+                            <span class="menu-label">Qu'est-ce que le HUB ?</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button href="#/rules" flex class="menu-button">
+                            <md-icon class="menu-icon">gavel</md-icon>
+                            <span class="menu-label">Les règles</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">create_new_folder</md-icon>
+                            <span class="menu-label">Présenter un projet</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">reorder</md-icon>
+                            <span class="menu-label">Parcourir les projets</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">assignment</md-icon>
+                            <span class="menu-label">Activités</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">event</md-icon>
+                            <span class="menu-label">Planning</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button href="#/staff" flex class="menu-button">
+                            <md-icon class="menu-icon">face</md-icon>
+                            <span class="menu-label">Le staff</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">fingerprint</md-icon>
+                            <span class="menu-label">Qui est là ?</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">email</md-icon>
+                            <span class="menu-label">Nous contacter</span>
+                        </md-button>
+                    </md-list-item>
+                    <md-list-item>
+                        <md-button flex class="menu-button">
+                            <md-icon class="menu-icon">rate_review</md-icon>
+                            <span class="menu-label">Recrutement</span>
+                        </md-button>
+                    </md-list-item>
+                </md-list>
+                <md-divider></md-divider>
+                <md-list layout="row">
+                    <span flex></span>
+                    <md-list-item>
+                        <a href="https://www.youtube.com/channel/UCFsxpxu-RVRoxwkDuFyb58A">
+                            <md-button class="brand-icon" aria-label="Youtube"><i class="fa fa-youtube"></i></md-button>
+                        </a>
+                    </md-list-item>
+                    <md-list-item>
+                        <a href="https://twitter.com/EpitechInnov">
+                            <md-button class="brand-icon" aria-label="Twitter"><i class="fa fa-twitter"></i></md-button>
+                        </a>
+                    </md-list-item>
+                    <md-list-item>
+                        <a href="https://www.facebook.com/groups/943906872291621/?fref=ts">
+                            <md-button class="brand-icon" aria-label="Facebook"><i class="fa fa-facebook-official"></i></md-button>
+                        </a>
+                    </md-list-item>
+                    <span flex></span>
+                </md-list>
+            </md-content>
+        </md-sidenav>
+        <div ng-view>
+        </div>
+    </body>
+
+    <footer>
+        <!-- AngularJS -->
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-animate.min.js"></script>
+        <script type="text/javascript" src="js/angular-aria.min.js"></script>
+        <script type="text/javascript" src="js/angular-messages.min.js"></script>
+        <script type="text/javascript" src="js/angular-material.min.js"></script>
+        <script type="text/javascript" src="js/angular-sanitize.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <!-- InformMe -->
+        <script type="text/javascript" src="js/base.js"></script>
+        <script type="text/javascript" src="js/home.js"></script>
+        <script type="text/javascript" src="js/about.js"></script>
+        <script type="text/javascript" src="js/rules.js"></script>
+        <script type="text/javascript" src="js/staff.js"></script>
+    </footer>
+</html>

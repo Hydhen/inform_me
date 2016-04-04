@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="css/staff.css" charset="utf-8">
+
+<div>
+    <md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="2" md-cols-gt-md="3" md-row-height="3:1">
+        <md-grid-tile ng-repeat="user in json">
+            <md-card ng-class="{'md-card status true': user['status'] == 'true', 'md-card status false': user['status'] == 'false'}" flex>
+                <div layout="row">
+                    <img class="profile-img" ng-src="{[{ user['image'] }]}" alt="{[{ user['first_name'] + ' ' + user['last_name']}]}" />
+                    <md-card-title>
+                        <md-card-title-text>
+                            <div layout="row">
+                                <span class="md-headline">{[{ user['first_name'] + ' ' + user['last_name'] }]}</span>
+                                <span flex></span>
+                                <div ng-if="user['status'] == 'true'">
+                                    <span class="md-headline status true">Disponible</span>
+                                </div>
+                                <div ng-if="user['status'] == 'false'">
+                                    <span class="md-headline status false">Indisponible</span>
+                                </div>
+                            </div>
+                            <md-divider class="profile-divider"></md-divider>
+                            {[{ user['role'] + ' ' + user['domain'] }]}
+                        </md-card-title-text>
+                    </md-card-title>
+                </div>
+            </md-card>
+        </md-grid-tile>
+    </md-grid-list>
+</div>
