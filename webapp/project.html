@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="css/project.css" charset="utf-8">
+
+<!--<md-content class="md-padding" layout-xs="column" layout="row">
+    <div flex-xs flex-gt-xs="50" layout="column" ng-repeat="project in json">-->
+
+
+<md-grid-list
+        md-cols-xs="1" md-cols-sm="2" md-cols-md="4" md-cols-gt-md="6"
+        md-row-height-gt-md="2:1" md-row-height="2:2"
+        md-gutter="12px" md-gutter-gt-sm="8px" >
+    <md-grid-tile ng-repeat="project in json"
+        md-rowspan="3" md-colspan="1" md-colspan-sm="1" md-colspan-xs="1">
+
+        <md-card>
+            <img ng-src="https://unsplash.it/1200/800/?random" class="md-card-image project-img" alt="{[{ project.name }]}">
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{[{ project.name }]}</span>
+                    <em>{[{ project.status }]}</em>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                {[{ project.description_short }]}
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <md-button class="md-icon-button" aria-label="Details"
+                           ng-click="showDialog(project.id)">
+                    <md-icon class="menu-icon">description</md-icon>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+
+    </md-grid-tile>
+</md-grid-list>
+
+<!--    </div>
+</md-content> -->

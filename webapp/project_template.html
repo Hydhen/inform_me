@@ -1,0 +1,28 @@
+<md-dialog>
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>{[{ json.name }]}</h2>
+            <span flex class="flex"></span>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div class="md-dialog-content">
+            <h3>Description courte :</h3>
+            {[{ json.description_short }]}
+            <h3>Description :</h3>
+            {[{ json.description }]}
+            <h3>Chef de projet :</h3>
+            {[{ json.leader }]}
+            <h3>Contact :</h3>
+            {[{ json.email }]}
+            <div ng-show="json.logins">
+                <h3>Membres du groupe :</h3>
+                {[{ json.logins }]}
+            </div>
+            <h3>Status du project :</h3>
+            {[{ json.status }]}
+            <h3>Dernière présentation au HUB :</h3>
+            {[{ json.updated }]}
+        </div>
+    </md-dialog-content>
+</md-dialog>

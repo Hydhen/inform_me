@@ -15,6 +15,9 @@ app.config(['$routeProvider', '$interpolateProvider', '$mdThemingProvider',
         }).when('/rules', {
             controller: 'RulesCtrl',
             templateUrl: 'rules.html'
+        }).when('/project', {
+            controller: 'ProjectCtrl',
+            templateUrl: 'project.html'
         }).when('/staff', {
             controller: 'StaffCtrl',
             templateUrl: 'staff.html'

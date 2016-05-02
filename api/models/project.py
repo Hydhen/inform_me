@@ -5,6 +5,7 @@ from . import Status
 
 class Project(models.Model):
     name = models.CharField(max_length=100, blank=True)
+    description_short = models.CharField(max_length=140, blank=True)
     description = models.TextField(blank=True)
     leader = models.CharField(max_length=8, blank=True)
     email = models.EmailField(max_length=100, blank=True)

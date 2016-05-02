@@ -12,10 +12,10 @@ def Staff(request):
     idx = 0
     for row in queryset:
         staff = {
-            'image': 'img/profile/' + row.login + ".jpg",
+            'image': '/images/profile/' + row.login + ".jpg",
             'first_name':row.first_name,
             'last_name': row.last_name,
-            'status': 'false',
+            'status': 'true',
             'domain': row.domain.name,
             'role': row.role.name,
         }

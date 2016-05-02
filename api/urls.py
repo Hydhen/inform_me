@@ -9,4 +9,6 @@ urlpatterns = [
     url(r'^about$', views.About, name='about'),
     url(r'^rules$', views.Rules, name='rules'),
     url(r'^staff$', views.Staff, name='staff'),
+    url(r'^project$', views.Project, name='project'),
+    url(r'^project/([0-9]+)$', views.ProjectId, name='projectId')
 ]
