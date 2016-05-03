@@ -1,0 +1,33 @@
+<div layout="row">
+    <div flex-gt-md></div>
+    <div layout="column" flex>
+        <md-card flex>
+            <form name="loginForm" data-ng-submit="login()">
+                <md-card-content>
+                    <md-input-container class="md-block">
+                        <label>Login</label>
+                        <input md-maxlength="8" required name="login" ng-model="username">
+                        <div ng-messages="loginForm.description.$error">
+                            <div ng-message="required">Ce champ est requis</div>
+                            <div ng-message="md-maxlength">Le login doit être de 8 charactères maximum</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block">
+                        <label>Password</label>
+                        <input required name="password" type="password" ng-model="password">
+                        <div ng-messages="loginForm.description.$error">
+                            <div ng-message="required">Ce champ est requis</div>
+                        </div>
+                    </md-input-container>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <md-button type="submit" class="md-fab md-primary md-button md-ink-ripple" ng-transclude>
+                        <md-icon>check</md-icon>
+                        <div class="md-ripple-container"></div>
+                    </md-button>
+                </md-card-actions>
+            </form>
+        </md-card>
+    </div>
+    <div flex-gt-md></div>
+</div>

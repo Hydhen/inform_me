@@ -5,7 +5,7 @@ app.controller('ProjectCtrl', function ($http, $scope, $mdDialog, $mdMedia) {
             $scope.json = response.data;
     },
         function errorCallback(response){
-            console.log("success");
+            console.log("error");
             console.log(response);
     });
 
@@ -26,12 +26,10 @@ function DialogController($http, $scope, $mdDialog, id) {
     console.log("lol");
     request = $http.get('http://localhost/api/project/' + id).then(
         function successCallback(response) {
-            console.log("lol");
             $scope.json = response.data;
-            console.log("lol");
     },
         function errorCallback(response){
-            console.log("success");
+            console.log("error");
             console.log(response);
     });
 

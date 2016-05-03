@@ -21,6 +21,19 @@
                     <span>Informations</span>
                 </h2>
                 <span flex></span>
+                <div ng-if="username != ''">
+                    {[{ username }]}
+                </div>
+                <div ng-if="username != ''">
+                    <md-button ng-click="logout()" class="md-icon-button" aria-label="Déconnexion">
+                        <md-icon>close</md-icon>
+                    </md-button>
+                </div>
+                <div ng-if="username == ''">
+                    <md-button href="#/login" class="md-icon-button" aria-label="Connexion">
+                        <md-icon>power_settings_new</md-icon>
+                    </md-button>
+                </div>
             </div>
         </md-toolbar>
         <md-sidenav md-component-id="menu">
@@ -131,6 +144,7 @@
         <!-- InformMe -->
         <script type="text/javascript" src="js/base.js"></script>
         <script type="text/javascript" src="js/home.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
         <script type="text/javascript" src="js/about.js"></script>
         <script type="text/javascript" src="js/rules.js"></script>
         <script type="text/javascript" src="js/project.js"></script>

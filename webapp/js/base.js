@@ -9,6 +9,9 @@ app.config(['$routeProvider', '$interpolateProvider', '$mdThemingProvider',
         $routeProvider.when('/', {
             controller: 'HomeCtrl',
             templateUrl: 'home.html',
+        }).when('/login', {
+            controller: 'LoginCtrl',
+            templateUrl: 'login.html'
         }).when('/about', {
             controller: 'AboutCtrl',
             templateUrl: 'about.html'
@@ -22,18 +25,41 @@ app.config(['$routeProvider', '$interpolateProvider', '$mdThemingProvider',
             controller: 'StaffCtrl',
             templateUrl: 'staff.html'
         })
-    }]);
+}]);
 
-    app.controller('MenuCtrl', function($scope, $mdSidenav) {
-        console.log("On index");
-        function toggleMenu() {
-            $mdSidenav('menu').toggle();
-        }
+app.controller('MenuCtrl', function($scope, $mdSidenav, $http, $mdToast, $window) {
+    function toggleMenu() {
+        $mdSidenav('menu').toggle();
+    }
 
-        function isMenuOpen() {
-            return $mdSidenav('menu').isOpen();
-        }
+    function isMenuOpen() {
+        return $mdSidenav('menu').isOpen();
+    }
 
-        $scope.toggleMenu = toggleMenu;
-        $scope.isMenuOpen = isMenuOpen;
-    });
+    request = $http.get('http://localhost/api/islogged').then(
+         function successCallback(response) {
+             console.log(response.data);
+             $scope.username = response.data
+         },
+         function errorCallback(response){
+             console.log("error");
+             console.log(response);
+         });
+
+    function logout() {
+        request = $http.get('http://localhost/api/logout').then(
+             function successCallback(response) {
+                 console.log(response);
+                 $scope.json = response.data;
+                 $window.location.reload();
+             },
+             function errorCallback(response){
+                 console.log("error");
+                 console.log(response);
+             });
+    }
+
+    $scope.toggleMenu = toggleMenu;
+    $scope.isMenuOpen = isMenuOpen;
+    $scope.logout = logout;
+});
