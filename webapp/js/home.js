@@ -1,5 +1,5 @@
-app.controller('HomeCtrl', function ($http, $scope) {
-    request = $http.get('http://localhost/api/').then(
+app.controller('HomeCtrl', function ($http, $scope, $location) {
+    request = $http.get('http://' + $location.host() + '/api/').then(
         function successCallback(response) {
             $scope.json = response.data;
     },

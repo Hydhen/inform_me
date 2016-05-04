@@ -27,7 +27,7 @@ app.config(['$routeProvider', '$interpolateProvider', '$mdThemingProvider',
         })
 }]);
 
-app.controller('MenuCtrl', function($scope, $mdSidenav, $http, $mdToast, $window) {
+app.controller('MenuCtrl', function($scope, $mdSidenav, $http, $mdToast, $window, $location) {
     function toggleMenu() {
         $mdSidenav('menu').toggle();
     }
@@ -36,7 +36,7 @@ app.controller('MenuCtrl', function($scope, $mdSidenav, $http, $mdToast, $window
         return $mdSidenav('menu').isOpen();
     }
 
-    request = $http.get('http://localhost/api/islogged').then(
+    request = $http.get('http://' + $location.host() + '/api/islogged').then(
          function successCallback(response) {
              console.log(response.data);
              $scope.username = response.data
@@ -47,7 +47,7 @@ app.controller('MenuCtrl', function($scope, $mdSidenav, $http, $mdToast, $window
          });
 
     function logout() {
-        request = $http.get('http://localhost/api/logout').then(
+        request = $http.get('http://' + $location.host() + '/api/logout').then(
              function successCallback(response) {
                  console.log(response);
                  $scope.json = response.data;

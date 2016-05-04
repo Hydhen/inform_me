@@ -1,5 +1,5 @@
-app.controller('RulesCtrl', function ($http, $scope) {
-    request = $http.get('http://localhost/api/rules').then(
+app.controller('RulesCtrl', function ($http, $scope, $location) {
+    request = $http.get('http://' + $location.host() + '/api/rules').then(
         function successCallback(response) {
             $scope.json = response.data;
     },

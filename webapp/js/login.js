@@ -1,4 +1,4 @@
-app.controller('LoginCtrl', function ($scope, $http, $mdToast, $window) {
+app.controller('LoginCtrl', function ($scope, $http, $mdToast, $window, $location) {
     console.log("Login Ctrl");
     $scope.username = '';
     $scope.password = '';
@@ -9,7 +9,7 @@ app.controller('LoginCtrl', function ($scope, $http, $mdToast, $window) {
             'password': this.password
         };
 
-        request = $http.post('http://localhost/api/login', data).then(
+        request = $http.post('http://' + $location.host() + '/api/login', data).then(
              function successCallback(response) {
                  console.log(response);
                  $scope.json = response.data;

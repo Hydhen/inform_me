@@ -1,5 +1,5 @@
-app.controller('StaffCtrl', function ($http, $scope) {
-    request = $http.get('http://localhost/api/staff').then(
+app.controller('StaffCtrl', function ($http, $scope, $location) {
+    request = $http.get('http://' + $location.host() + '/api/staff').then(
         function successCallback(response) {
             $scope.json = response.data;
     },

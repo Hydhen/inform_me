@@ -1,6 +1,6 @@
 
-app.controller('ProjectCtrl', function ($http, $scope, $mdDialog, $mdMedia) {
-    request = $http.get('http://localhost/api/project').then(
+app.controller('ProjectCtrl', function ($http, $scope, $mdDialog, $mdMedia, $location) {
+    request = $http.get('http://' + $location.host() + '/api/project').then(
         function successCallback(response) {
             $scope.json = response.data;
     },
@@ -21,10 +21,10 @@ app.controller('ProjectCtrl', function ($http, $scope, $mdDialog, $mdMedia) {
     };
 });
 
-function DialogController($http, $scope, $mdDialog, id) {
+function DialogController($http, $scope, $mdDialog, $location, id) {
     $scope.id = id;
     console.log("lol");
-    request = $http.get('http://localhost/api/project/' + id).then(
+    request = $http.get('http://' + $location.host() + '/api/project/' + id).then(
         function successCallback(response) {
             $scope.json = response.data;
             console.log($scope.json.created);
@@ -36,24 +36,3 @@ function DialogController($http, $scope, $mdDialog, id) {
     });
 
 }
-
-/*        var useFullScreen = ($mdMedia('sm') || $mdMedia('xs'))  && $scope.customFullscreen;
-$mdDialog.show({
-controller: DialogController,
-templateUrl: 'dialog1.tmpl.html',
-parent: angular.element(document.body),
-targetEvent: ev,
-clickOutsideToClose:true,
-fullscreen: useFullScreen
-})
-.then(function(answer) {
-$scope.status = 'You said the information was "' + answer + '".';
-}, function() {
-$scope.status = 'You cancelled the dialog.';
-});
-$scope.$watch(function() {
-return $mdMedia('xs') || $mdMedia('sm');
-}, function(wantsFullScreen) {
-$scope.customFullscreen = (wantsFullScreen === true);
-});
-*/
