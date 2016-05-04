@@ -23,6 +23,10 @@
             {[{ json.status }]}
             <h3>Dernière présentation au HUB :</h3>
             {[{ json.updated }]}
+            <div ng-show="json.created">
+                <h3>Proposition du projet :</h3>
+                {[{ json.created }]}
+            </div>
         </div>
     </md-dialog-content>
 </md-dialog>

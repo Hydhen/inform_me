@@ -1,6 +1,7 @@
 from django.http import JsonResponse
 from django.core import serializers
 from django.contrib.staticfiles.templatetags.staticfiles import static
+from django.contrib.auth import authenticate
 import json
 
 from ..models import Status
@@ -33,4 +34,6 @@ def ProjectId(request, id):
         'status': query.status.name,
         'updated': query.date_updated,
     }
+    if request.user.is_authenticated():
+        project['created'] = query.date_created
     return JsonResponse(project, safe=False)
