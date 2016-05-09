@@ -4,7 +4,7 @@ app.controller('RulesCtrl', function ($http, $scope, $location) {
             $scope.json = response.data;
     },
         function errorCallback(response){
-            console.log("success");
+            console.log("error");
             console.log(response);
     })
 });
