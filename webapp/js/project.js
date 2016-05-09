@@ -23,7 +23,6 @@ app.controller('ProjectCtrl', function ($http, $scope, $mdDialog, $mdMedia, $loc
 
 function DialogController($http, $scope, $mdDialog, $location, id) {
     $scope.id = id;
-    console.log("lol");
     request = $http.get('http://' + $location.host() + '/api/project/' + id).then(
         function successCallback(response) {
             $scope.json = response.data;
@@ -36,3 +35,14 @@ function DialogController($http, $scope, $mdDialog, $location, id) {
     });
 
 }
+
+app.controller('PresentProjectCtrl', function ($http, $scope, $location) {
+    request = $http.get('http://' + $location.host() + '/api/present_project').then(
+        function successCallback(response) {
+            $scope.json = response.data;
+    },
+        function errorCallback(response){
+            console.log("error");
+            console.log(response);
+    })
+});

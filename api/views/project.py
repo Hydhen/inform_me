@@ -37,3 +37,12 @@ def ProjectId(request, id):
     if request.user.is_authenticated():
         project['created'] = query.date_created
     return JsonResponse(project, safe=False)
+
+def PresentProject(request):
+    if request.method == 'GET':
+        file_path = '/data/development/inform_me/text/present_project.json'
+        with open(file_path, 'r') as file :
+            raw_data = file.read().decode('utf8')
+        flowchart = json.loads(raw_data)
+        flowchart['image'] = '/images/flowchart/project_flowchart.png'
+    return JsonResponse(flowchart, safe=False)

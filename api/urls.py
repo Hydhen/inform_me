@@ -13,5 +13,6 @@ urlpatterns = [
     url(r'^project/([0-9]+)$', views.ProjectId, name='projectId'),
     url(r'^login$', views.Login, name='login'),
     url(r'^islogged$', views.IsLogged, name='isLogged'),
-    url(r'^logout$', views.Logout, name='logout')
+    url(r'^logout$', views.Logout, name='logout'),
+    url(r'^present_project$', views.PresentProject, name='present_project')
 ]
