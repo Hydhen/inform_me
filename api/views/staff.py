@@ -11,10 +11,13 @@ def Staff(request):
     queryset = model_Staff.objects.order_by('-role')
     staffs = []
     idx = 0
-    image = "/images/profile/axolotl.jpg"
+    default = "/images/profile/axolotl.jpg"
+    image = default
     for row in queryset:
         if os.path.isfile('./webapp/images/profile/' + row.login + '.jpg') == True :
             image = "/images/profile/" + row.login + ".jpg"
+        else :
+            image = default
         staff = {
             'image': image,
             'first_name':row.first_name,
