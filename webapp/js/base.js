@@ -27,6 +27,9 @@ app.config(['$routeProvider', '$interpolateProvider', '$mdThemingProvider',
         }).when('/staff', {
             controller: 'StaffCtrl',
             templateUrl: 'staff.html'
+        }).when('/contact', {
+            controller: 'ContactCtrl',
+            templateUrl: 'contact.html'
         })
 }]);
 

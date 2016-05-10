@@ -14,5 +14,6 @@ urlpatterns = [
     url(r'^login$', views.Login, name='login'),
     url(r'^islogged$', views.IsLogged, name='isLogged'),
     url(r'^logout$', views.Logout, name='logout'),
-    url(r'^present_project$', views.PresentProject, name='present_project')
+    url(r'^present_project$', views.PresentProject, name='present_project'),
+    url(r'^contact$', views.Contact, name='contact')
 ]

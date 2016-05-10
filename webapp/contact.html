@@ -1,0 +1,19 @@
+<div layout="row">
+    <div flex-gt-md></div>
+    <div layout="column" flex>
+        <md-card flex>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">{[{ json["title"] }]}</span>
+                    <md-divider flex></md-divier>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content>
+                <p ng-repeat="content in json['content']">
+                    {[{ content }]}
+                </p>
+            </md-card-content>
+        </md-card>
+    </div>
+    <div flex-gt-md></div>
+</div>
